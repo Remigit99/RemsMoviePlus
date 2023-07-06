@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1500px;
+  height: 100vh;
+  line-height: 1.4;
+  background-color: rgb(16, 32, 27);
+  color: whitesmoke;
+  font-family: "Mulish", sans-serif;
+}
+
+.app {
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem 0 1rem;
+
+  h1 {
+    text-align: center;
+    margin: 1rem 0 2rem;
+
+    span {
+      color: bisque;
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .search__box {
+    margin: 1rem auto 2rem;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 0.6rem 1rem;
+    border-radius: 2rem;
+
+    input {
+      background-color: transparent;
+      font-family: inherit;
+      color: aliceblue;
+    }
+
+    .icon {
+      cursor: pointer;
+    }
+  }
+
+  section {
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      .movie__card {
+        border-radius: 0.8rem;
+        overflow: hidden;
+        background-color: rgb(20, 20, 20);
+
+        .poster__img {
+          min-height: 350px;
+        }
+
+        .movie__info {
+          padding: 0.7rem 0.4rem 0.1rem;
+
+          small {
+            color: bisque;
+          }
+        }
+      }
+    }
+  }
+
+}

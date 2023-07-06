@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import MovieCard from './MovieCard'
 
-import './App.css'
+import './App.scss'
 
 function App() {
 
