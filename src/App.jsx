@@ -28,7 +28,7 @@ function App() {
   }
 
   useEffect(() => {
-    getMovies("spiderman")
+    getMovies("Avengers")
   }, [])
 
   // if (movies.length < 1) {
