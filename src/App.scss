@@ -67,7 +67,7 @@ body {
     }
 
     @include devices(mobile) {
-      width: 60%;
+      width: max-content;
     }
 
 
@@ -107,7 +107,7 @@ body {
         }
 
         .movie__info {
-          padding: 0.7rem 0.4rem 0.1rem;
+          padding: 0.7rem 0.4rem 0.3rem;
 
           small {
             color: bisque;
@@ -117,16 +117,4 @@ body {
     }
   }
 
-}
-
-@media screen and (max-width: 600px) {
-
-  .app {
-    main {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-    }
-
-  }
 }
