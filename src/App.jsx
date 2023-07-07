@@ -9,6 +9,7 @@ function App() {
   const [movies, setMovies] = useState([])
   const [search, setSearch] = useState("")
   const [error, setError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   //OMDB API + KEY
   const API_URL = import.meta.env.VITE_API_URL_KEY;
@@ -19,6 +20,8 @@ function App() {
       const data = await res.json()
       // console.log(data)
       setMovies(data.Search)
+      setIsLoading(false)
+
 
     } catch (error) {
       setError(true)
@@ -30,6 +33,8 @@ function App() {
   useEffect(() => {
     getMovies("Avengers")
   }, [])
+
+
 
   // if (movies.length < 1) {
   //   return (
@@ -51,6 +56,11 @@ function App() {
       {
         error && <section>
           <h1>No Movie Found For Your Search</h1>
+        </section>
+      }
+      {
+        isLoading && <section>
+          <h1>Geting Your Movies...</h1>
         </section>
       }
 

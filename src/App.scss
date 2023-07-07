@@ -17,6 +17,21 @@ body {
   font-family: "Mulish", sans-serif;
 }
 
+@mixin devices ($breakpoint) {
+
+  @if $breakpoint ==tablet {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==mobile {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
 .app {
   width: 80%;
   margin: 0 auto;
@@ -47,6 +62,15 @@ body {
     padding: 0.6rem 1rem;
     border-radius: 2rem;
 
+    @include devices(tablet) {
+      width: 40%;
+    }
+
+    @include devices(mobile) {
+      width: 60%;
+    }
+
+
     input {
       background-color: transparent;
       font-family: inherit;
@@ -64,6 +88,14 @@ body {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
+
+      @include devices(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include devices(mobile) {
+        grid-template-columns: 1fr;
+      }
 
       .movie__card {
         border-radius: 0.8rem;
@@ -85,4 +117,16 @@ body {
     }
   }
 
+}
+
+@media screen and (max-width: 600px) {
+
+  .app {
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+  }
 }
