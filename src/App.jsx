@@ -13,7 +13,7 @@ function App() {
 
   //OMDB API + KEY
   // const API_URL = import.meta.env.VITE_API_URL_KEY;
-  const API_URL = "http://www.omdbapi.com/?i=tt38961&apikey=b0c31de9"
+  const API_URL = "https://www.omdbapi.com/?i=tt38961&apikey=b0c31de9"
 
   const getMovies = async (title) => {
     try {
@@ -54,16 +54,26 @@ function App() {
           />
         </span>
       </div>
-      {
+
+      {error ? <section>
+        <h1>No Movie Found For Your Search</h1>
+      </section> :
+
+        isLoading && <section>
+          <h1>Getting Your Movies...</h1>
+        </section>
+
+      }
+      {/* {
         error && <section>
           <h1>No Movie Found For Your Search</h1>
         </section>
       }
       {
         isLoading && <section>
-          <h1>Geting Your Movies...</h1>
+          <h1>Getting Your Movies...</h1>
         </section>
-      }
+      } */}
 
       <section>
         <main>
