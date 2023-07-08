@@ -12,7 +12,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   //OMDB API + KEY
-  const API_URL = import.meta.env.VITE_API_URL_KEY;
+  // const API_URL = import.meta.env.VITE_API_URL_KEY;
+  const API_URL = "http://www.omdbapi.com/?i=tt38961&apikey=b0c31de9"
 
   const getMovies = async (title) => {
     try {
@@ -31,7 +32,7 @@ function App() {
   }
 
   useEffect(() => {
-    getMovies("Avengers")
+    getMovies("John Wick")
   }, [])
 
 
