@@ -22,10 +22,11 @@ function App() {
       // console.log(data)
       setMovies(data.Search)
       setIsLoading(false)
-
+      setSearch("")
 
     } catch (error) {
       setError(true)
+      setIsLoading(false)
     }
 
 
